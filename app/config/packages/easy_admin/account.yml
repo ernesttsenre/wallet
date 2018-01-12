@@ -1,0 +1,25 @@
+easy_admin:
+    entities:
+        Account:
+            class: AppBundle\Entity\Account
+            label: 'Счета'
+            help: 'Здесь хранятся деньги'
+            disabled_actions: ['delete', 'search']
+
+            list:
+                fields:
+                    - { property: title, label: 'Название' }
+                sort: 'priority'
+
+            form:
+                fields:
+                    - { property: title, label: 'Название' }
+                    - { property: priority, label: 'Приоритет' }
+
+            new:
+                title: 'Новый счет'
+                help: 'Чем выше приоритет, тем выше счет'
+
+            edit:
+                title: 'Редактирование счета'
+                help: 'Чем выше приоритет, тем выше счет'

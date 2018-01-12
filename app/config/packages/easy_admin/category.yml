@@ -1,0 +1,26 @@
+easy_admin:
+    entities:
+        Category:
+            class: AppBundle\Entity\Category
+            label: 'Категории'
+            help: 'Основания для движения денег'
+
+            list:
+                fields:
+                    - { property: title, label: 'Название' }
+                    - { property: defaultComment, label: 'Комментарий' }
+                    - { property: defaultAmount, label: 'Сумма' }
+
+            form:
+                fields:
+                    - { property: title, label: 'Название' }
+                    - { property: defaultComment, label: 'Комментарий' }
+                    - { property: defaultAmount, label: 'Сумма' }
+
+            new:
+                title: 'Новая категория'
+                help: 'Можно указать сумму и комментарий по умолчанию'
+
+            edit:
+                title: 'Редактирование категории'
+                help: 'Можно указать сумму и комментарий по умолчанию'

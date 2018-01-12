@@ -1,0 +1,16 @@
+parameters:
+    locale: ru
+
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: framework.yml }
+    - { resource: twig.yml }
+    - { resource: doctrine.yml }
+    - { resource: swiftmailer.yml }
+
+    - { resource: packages/fos_user.yml }
+    - { resource: packages/doctrine_migrations.yml }
+    - { resource: packages/ivory_ck_editor.yml }
+    - { resource: packages/easy_admin/ }

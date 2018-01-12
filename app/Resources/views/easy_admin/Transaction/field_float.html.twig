@@ -1,0 +1,5 @@
+{% set transactionInfo = item.info %}
+
+<div class="text-right {{ transactionInfo.class }}">
+    {{ transactionInfo.append }} {{ include('@EasyAdmin/default/field_float.html.twig') }}
+</div>

@@ -1,0 +1,31 @@
+easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            controller: AppBundle\Controller\UserController
+            label: 'Пользователи'
+            help: 'Управление нами'
+            disabled_actions: ['delete', 'new', 'search', 'show']
+
+            list:
+                fields:
+                    - { property: username, label: 'Логин' }
+                    - { property: title, label: 'Имя' }
+                    - { property: email, label: 'Email' }
+                    - { property: enabled, label: 'Активен' }
+                    - { property: lastLogin, label: 'Последний вход' }
+
+            form:
+                fields:
+                    - { property: username, label: 'Логин' }
+                    - { property: title, label: 'Имя' }
+                    - { property: email, label: 'Email' }
+                    - { property: enabled, label: 'Активен' }
+                    - { property: 'plainPassword', label: 'Пароль', type: 'text', type_options: { required: false } }
+                    - { property: 'roles', label: 'Роль', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+
+            edit:
+                title: 'Редактирование пользователя'
+                fields:
+                    - { property: 'plainPassword', type_options: { required: false} }
+                form_options: { validation_groups: ['Profile'] }

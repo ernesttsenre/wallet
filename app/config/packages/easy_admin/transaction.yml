@@ -1,0 +1,33 @@
+easy_admin:
+    entities:
+        Transaction:
+            class: AppBundle\Entity\Transaction
+            controller: AppBundle\Controller\TransactionController
+            label: 'Транзакции'
+            help: 'Движение денег'
+            disabled_actions: ['search']
+
+            list:
+                fields:
+                    - { property: user, label: 'Пользователь' }
+                    - { property: sourceAccountPretty, label: 'Источник' }
+                    - { property: recieverAccountPretty, label: 'Получатель' }
+                    - { property: amount, label: 'Сумма', type: 'float', template: 'easy_admin/Transaction/field_float.html.twig' }
+                    - { property: createdAt, label: 'Дата' }
+                sort: ['createdAt', 'DESC']
+
+            form:
+                fields:
+                    - { property: user, label: 'Пользователь' }
+                    - { property: sourceAccount, label: 'Источник', type: 'entity', type_options: { placeholder: 'Внешний мир' } }
+                    - { property: recieverAccount, label: 'Получатель', type: 'entity', type_options: { placeholder: 'Внешний мир' } }
+                    - { property: category, label: 'Категория' }
+                    - { type: 'divider' }
+                    - { property: amount, label: 'Сумма', type: 'money' }
+                    - { property: comment, label: 'Комментарий', type: 'ckeditor' }
+
+            new:
+                title: 'Новая транзакция'
+
+            edit:
+                title: 'Редактирование транзакции'

@@ -1,0 +1,30 @@
+easy_admin:
+    site_name: 'Wallet'
+
+    design:
+        color_scheme: 'dark'
+        templates:
+            layout: 'easy_admin/layout.html.twig'
+        menu:
+            - { label: 'Управление' }
+            - { entity: 'Account', label: 'Счета', icon: 'credit-card', default: true }
+            - { entity: 'Category', label: 'Категории', icon: 'tags' }
+            - { entity: 'Transaction', label: 'Транзакции', icon: 'exchange' }
+            - { entity: 'User', label: 'Пользователи', icon: 'users' }
+
+    list:
+        title: '%%entity_label%%'
+        max_results: 30
+        actions:
+            - { name: 'show', icon: 'search', label: '' }
+            - { name: 'edit', icon: 'pencil', label: '' }
+            - { name: 'delete', icon: 'trash', label: '' }
+            - { name: 'new', label: 'Создать' }
+
+    show:
+        max_results: 20
+
+    formats:
+        date:     'd.m.Y'
+        time:     'H:i'
+        datetime: 'd.m.Y H:i'
