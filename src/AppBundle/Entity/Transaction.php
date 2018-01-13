@@ -4,10 +4,12 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Validator\Constraints as WalletAssert;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="transactions")
+ * @WalletAssert\TransactionConstraint
  */
 class Transaction
 {

@@ -1,0 +1,30 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}list{% endblock %}
+
+{% set _content_title = 'Dashboard' %}
+{% block page_title -%}{{ _content_title }}{%- endblock %}
+
+{% block content_header %}
+    <h1 class="title">{{ _content_title }}</h1>
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+            {% for account in accounts %}
+                <tr>
+                    <td>{{ account.title }}</td>
+                    <td>
+                        {% if account.id in accountBalances|keys %}
+                            {{ accountBalances[account.id].amount|number_format(2) }}
+                        {% else %}
+                            {{ include('@EasyAdmin/default/label_null.html.twig') }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

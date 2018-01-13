@@ -6,11 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\UniqueConstraint;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\RegistryEntityRepository")
  * @ORM\Table(name="registry_entries",
  *  uniqueConstraints={
  *     @UniqueConstraint(name="registry_entry_unique",
- *          columns={"transaction_id", "user_id", "account_id", "debet_amount", "credit_amount"})
+ *          columns={"transaction_id", "user_id", "account_id", "debit_amount", "credit_amount"})
  *    }
  * )
  */
@@ -54,7 +54,7 @@ class RegistryEntry
      *
      * @ORM\Column(type="float", scale=2, nullable=false, options={"default"=0})
      */
-    private $debetAmount;
+    private $debitAmount;
 
     /**
      * @var float
@@ -136,17 +136,17 @@ class RegistryEntry
     /**
      * @return float
      */
-    public function getDebetAmount()
+    public function getDebitAmount()
     {
-        return $this->debetAmount;
+        return $this->debitAmount;
     }
 
     /**
-     * @param float $debetAmount
+     * @param float $debitAmount
      */
-    public function setDebetAmount($debetAmount)
+    public function setDebitAmount($debitAmount)
     {
-        $this->debetAmount = $debetAmount;
+        $this->debitAmount = $debitAmount;
     }
 
     /**

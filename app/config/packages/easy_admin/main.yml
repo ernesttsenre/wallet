@@ -6,8 +6,9 @@ easy_admin:
         templates:
             layout: 'easy_admin/layout.html.twig'
         menu:
+            - { label: 'Dashboard', route: 'admin_dashboard', icon: 'dashboard', default: true }
             - { label: 'Управление' }
-            - { entity: 'Account', label: 'Счета', icon: 'credit-card', default: true }
+            - { entity: 'Account', label: 'Счета', icon: 'credit-card' }
             - { entity: 'Category', label: 'Категории', icon: 'tags' }
             - { entity: 'Transaction', label: 'Транзакции', icon: 'exchange' }
             - { entity: 'User', label: 'Пользователи', icon: 'users' }
