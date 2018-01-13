@@ -22,15 +22,15 @@ class Transaction
      */
     private $info = [
         self::DEBIT => [
-            'class' => 'text-success',
+            'class' => 'success',
             'append' => '+',
         ],
         self::CREDIT => [
-            'class' => 'text-danger',
+            'class' => 'danger',
             'append' => '-',
         ],
         self::TRANSFER => [
-            'class' => 'text-info',
+            'class' => 'info',
             'append' => null,
         ],
     ];

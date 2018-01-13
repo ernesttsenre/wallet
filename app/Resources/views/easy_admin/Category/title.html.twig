@@ -1,0 +1,7 @@
+<div class="text-{{ item.info.class }}">
+{% if view == 'show' %}
+    <i class="fa fa-{{ item.icon }}"></i> {{ value|nl2br }}
+{% else %}
+    <i class="fa fa-{{ item.icon }}"></i> {{ value|easyadmin_truncate }}
+{% endif %}
+</div>

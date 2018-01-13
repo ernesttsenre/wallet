@@ -5,15 +5,17 @@ easy_admin:
             controller: AppBundle\Controller\TransactionController
             label: 'Транзакции'
             help: 'Движение денег'
-            disabled_actions: ['search']
+            disabled_actions: ['search', 'show']
 
             list:
                 fields:
                     - { property: user, label: 'Пользователь' }
                     - { property: sourceAccountPretty, label: 'Источник' }
                     - { property: recieverAccountPretty, label: 'Получатель' }
-                    - { property: amount, label: 'Сумма', type: 'float', template: 'easy_admin/Transaction/field_float.html.twig' }
+                    - { property: category, label: 'Категория' }
+                    - { property: amount, label: 'Сумма', type: 'float', css_class: 'text-right', template: 'easy_admin/Transaction/amount.html.twig' }
                     - { property: createdAt, label: 'Дата' }
+
                 sort: ['createdAt', 'DESC']
 
             form:

@@ -4,23 +4,29 @@ easy_admin:
             class: AppBundle\Entity\Category
             label: 'Категории'
             help: 'Основания для движения денег'
+            disabled_actions: ['show']
 
             list:
                 fields:
-                    - { property: title, label: 'Название' }
+                    - { property: title, label: 'Название', template: 'easy_admin/Category/title.html.twig' }
                     - { property: defaultComment, label: 'Комментарий' }
                     - { property: defaultAmount, label: 'Сумма' }
+                    - { property: fromWorld, label: 'Из вне' }
+                    - { property: toWorld, label: 'Во вне' }
 
             form:
                 fields:
                     - { property: title, label: 'Название' }
                     - { property: defaultComment, label: 'Комментарий' }
                     - { property: defaultAmount, label: 'Сумма' }
+                    - { property: fromWorld, label: 'Из вне' }
+                    - { property: toWorld, label: 'Во вне' }
+                    - { property: icon, label: 'Иконка', help: 'http://fontawesome.io/icons/' }
 
             new:
                 title: 'Новая категория'
-                help: 'Можно указать сумму и комментарий по умолчанию'
+                help: 'Некоторые параметры транзакции можно указать по умолчанию'
 
             edit:
                 title: 'Редактирование категории'
-                help: 'Можно указать сумму и комментарий по умолчанию'
+                help: 'Некоторые параметры транзакции можно указать по умолчанию'

@@ -1,4 +1,4 @@
-{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% extends ':easy_admin:layout.html.twig' %}
 {% block body_class %}list{% endblock %}
 
 {% set _content_title = 'Dashboard' %}
@@ -27,4 +27,12 @@
             </tbody>
         </table>
     </div>
+
+    <hr>
+
+    {% for category in categories %}
+        <a href="{{ path('easyadmin', { action: 'new', entity: 'Transaction', categoryId: category.id }) }}" class="btn btn-{{ category.info.class }}">
+            <i class="fa fa-{{ category.icon }}"></i> {{ category.title }}
+        </a>
+    {% endfor %}
 {% endblock %}

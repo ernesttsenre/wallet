@@ -26,6 +26,8 @@ class TransactionConstraintValidator extends ConstraintValidator
     /**
      * @param Transaction $value
      * @param Constraint $constraint
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function validate($value, Constraint $constraint)
     {

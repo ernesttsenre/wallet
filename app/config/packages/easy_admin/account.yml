@@ -4,7 +4,7 @@ easy_admin:
             class: AppBundle\Entity\Account
             label: 'Счета'
             help: 'Здесь хранятся деньги'
-            disabled_actions: ['delete', 'search']
+            disabled_actions: ['delete', 'search', 'show']
 
             list:
                 fields:
