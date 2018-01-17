@@ -21,8 +21,8 @@ easy_admin:
             form:
                 fields:
                     - { property: user, label: 'Пользователь' }
-                    - { property: sourceAccount, label: 'Источник', type: 'entity', type_options: { placeholder: 'Внешний мир' } }
-                    - { property: recieverAccount, label: 'Получатель', type: 'entity', type_options: { placeholder: 'Внешний мир' } }
+                    - { property: sourceAccount, label: 'С какого счета', type: 'entity', type_options: { placeholder: 'Внешний мир' } }
+                    - { property: recieverAccount, label: 'На какой счет', type: 'entity', type_options: { placeholder: 'Внешний мир' } }
                     - { property: category, label: 'Категория' }
                     - { type: 'divider' }
                     - { property: amount, label: 'Сумма', type: 'money' }

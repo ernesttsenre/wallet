@@ -28,10 +28,11 @@
         </table>
     </div>
 
-    <hr>
+    <h3>Категории</h3>
+    <hr style="margin-top: 0;">
 
     {% for category in categories %}
-        <a href="{{ path('easyadmin', { action: 'new', entity: 'Transaction', categoryId: category.id }) }}" class="btn btn-{{ category.info.class }}">
+        <a href="{{ path('easyadmin', { action: 'new', entity: 'Transaction', categoryId: category.id }) }}" class="btn btn-{{ category.info.class }} thumbnail">
             <i class="fa fa-{{ category.icon }}"></i> {{ category.title }}
         </a>
     {% endfor %}
