@@ -4,7 +4,9 @@ namespace Deployer;
 require 'recipe/symfony.php';
 
 // Project name
-set('application', 'my_project');
+set('application', 'wallet');
+set('bin_dir', 'bin');
+set('var_dir', 'var');
 
 // Project repository
 set('repository', 'git@github.com:ernesttsenre/wallet.git');
@@ -21,10 +23,10 @@ set('writable_dirs', ['var/cache', 'var/logs']);
 
 // Hosts
 host('185.143.172.30')
-    ->user('root')
+    ->user('user')
     ->port(22)
     ->multiplexing(true)
-    ->set('deploy_path', '/var/www');
+    ->set('deploy_path', '/home/user');
 
 // Tasks
 //task('build', function () {
@@ -32,7 +34,7 @@ host('185.143.172.30')
 //});
 
 // [Optional] if deploy fails automatically unlock.
-//after('deploy:failed', 'deploy:unlock');
+after('deploy:failed', 'deploy:unlock');
 
 // Migrate database before symlink new release.
 before('deploy:symlink', 'database:migrate');
